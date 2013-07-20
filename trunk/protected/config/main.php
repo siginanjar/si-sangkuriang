@@ -76,6 +76,9 @@ return array(
 			),
 		),
 	),
+	
+	//Ganti Theme
+	'theme'=>'hebo',
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
