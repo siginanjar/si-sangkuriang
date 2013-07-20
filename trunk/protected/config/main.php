@@ -52,7 +52,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=si_sangkuriang',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'rahasia',// password just for me => aldy
+			'password' => '',// password just for me => aldy
 			'charset' => 'utf8',
 		),
 		
