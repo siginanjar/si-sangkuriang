@@ -436,3 +436,21 @@ Stack trace:
 REQUEST_URI=/SISangkuriang/index.php/kelas/Kelas1
 HTTP_REFERER=http://localhost/SISangkuriang/index.php/kelas
 ---
+2013/07/20 09:03:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "absen".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('absen')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\sangkuriang\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sangkuriang/index.php/absen
+---
+2013/07/20 09:04:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "absensi".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('absensi')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('absensi')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/absensi')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sangkuriang\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/sangkuriang/index.php/site/absensi/
+---
