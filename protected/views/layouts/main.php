@@ -29,7 +29,13 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Home', 'url'=>array('/site/index')),				
+				array('label'=>'Siswa', 'url'=>array('/site/siswa/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Absensi', 'url'=>array('/site/absensi/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Kelas', 'url'=>array('/site/kelas/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Guru', 'url'=>array('/site/guru/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Nilai', 'url'=>array('/site/nilai/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Mata Pelajaran', 'url'=>array('/site/mataPelajaran/index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
