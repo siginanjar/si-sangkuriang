@@ -31,7 +31,7 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),				
 				array('label'=>'Siswa', 'url'=>array('/siswa/index'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Absensi', 'url'=>array('/site/absensi/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Absensi', 'url'=>array('/absensi/index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Kelas', 'url'=>array('/kelas/index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Guru', 'url'=>array('/guru/index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Nilai', 'url'=>array('/nilai/index'), 'visible'=>!Yii::app()->user->isGuest),
