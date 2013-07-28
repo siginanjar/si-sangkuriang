@@ -9,7 +9,7 @@ a,a:hover, a:active,.dropdown-menu .active > a,
 .dropdown-menu .active > a:hover,.dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus,
 .dropdown-submenu:hover > a{
-	color:#0088CC;
+	color:#970000;
 }
 
 #header,.navbar-inner{
@@ -18,7 +18,7 @@ a,a:hover, a:active,.dropdown-menu .active > a,
 
 #header
 {
-	border-top:solid 4px #0088CC;	
+	border-top:solid 4px #970000;	
 }
 
 .navbar .nav > .active > a,
@@ -37,7 +37,7 @@ a,a:hover, a:active,.dropdown-menu .active > a,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
 	color: #ffffff;
-	background-color: #0088CC;
+	background-color: #970000;
 	text-shadow:#333333 0 1px 0;
 }
 

@@ -25,6 +25,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/lightbox/css/lightbox.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/template.css">   
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style1.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="alternate stylesheet" type="text/css" media="screen" title="style2" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style2.css" />
     <link rel="alternate stylesheet" type="text/css" media="screen" title="style3" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style3.css" />
     <link rel="alternate stylesheet" type="text/css" media="screen" title="style4" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style4.css" />
@@ -45,8 +47,12 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+		<div id="logo"><h2><?php echo CHtml::encode(Yii::app()->name); ?></h2></div>
 	</div><!-- header -->
+    
+    <div id="slider">
+        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/siswa_guru.png"/>
+    </div>
 
 	<div id="navigation-main">
 		<?php 
@@ -79,12 +85,10 @@
 	<div class="clear"></div>
 
 	<footer>
-        <div class="footer">
-            <div class="container">
-        		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+        <div class="footer" align="center">
+        		Copyright &copy; <?php echo date('Y'); ?> by Wilujeng Sumping<br/>
         		All Rights Reserved.<br/>
-        		<?php echo Yii::powered(); ?>
-            </div>
+        		Powered by <a href="#">Cigadung Soft</a>
     	</div>
     </footer><!-- footer -->
 
