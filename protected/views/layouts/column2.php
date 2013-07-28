@@ -15,7 +15,7 @@
 	?>
 	</div><!-- sidebar -->
 </div>
-<div class=""><!--span-19-->
+<div><!--span-19-->
 	<div id="content">
 		<?php echo $content; ?>
 	</div><!-- content -->
