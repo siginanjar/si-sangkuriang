@@ -7,10 +7,10 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Absensi', 'url'=>array('index')),
-	array('label'=>'Create Absensi', 'url'=>array('create')),
-);
+//$this->menu=array(
+//	array('label'=>'List Absensi', 'url'=>array('index')),
+//	array('label'=>'Create Absensi', 'url'=>array('create')),
+//);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -28,12 +28,18 @@ $('.search-form form').submit(function(){
 
 <h1>Manage Absensis</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/absensi/index" class="btn btn-danger">
+    <i class="icon-list"></i>
+    &nbsp;
+    <span>List Absensi</span>
+</a>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/absensi/create" class="btn btn-danger">
+    <i class="icon-edit"></i>
+    &nbsp;
+    <span>Create Absensi</span>
+</a>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Advanced Search','#',array('class'=>'btn btn-danger search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

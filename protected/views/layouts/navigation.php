@@ -11,6 +11,7 @@
 
       <div class="nav-collapse collapse">
         <ul class="nav">
+        <!--
           <li class="active dropdown">
               <a href="index.php" class="dropdown-toggle">
                 Home
@@ -45,17 +46,62 @@
               <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/mataPelajaran/index" class="dropdown-toggle">
                 Mata Pelajaran
               </a>
-          </li>          
+          </li>-->
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/login">
-                Login
-              </a>
-          </li>
-          <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/logout">
-                Logout
-              </a>
-          </li>
+            <?php
+            $this->widget('zii.widgets.CMenu',array(
+                'htmlOptions'=>array('class'=>'nav'),
+        		'items'=>array(
+        			array(
+                          'label'=>'Home',
+                          'url'=>array('/site/index'),
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Siswa',
+                          'url'=>array('/siswa/index'),
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Absensi',
+                          'url'=>array('/absensi/index'),
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Kelas',
+                          'url'=>array('/kelas/index'),
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Guru',
+                          'url'=>array('/guru/index'),
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Nilai',
+                          'url'=>array('/nilai/index'),
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Mata Pelajaran',
+                          'url'=>array('/mataPelajaran/index'),
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Login',
+                          'url'=>array('/site/login'),
+                          'visible'=>Yii::app()->user->isGuest,
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+        			array(
+                          'label'=>'Logout ('.Yii::app()->user->name.')',
+                          'url'=>array('/site/logout'),
+                          'visible'=>!Yii::app()->user->isGuest),
+                          'itemOptions'=>array('class'=>'nav')
+        			),
+        		));
+        ?>
+          </li>  
         </ul><!--/.nav -->
       </div><!--/.nav-collapse -->
     </div><!--/ .container -->
