@@ -39,25 +39,20 @@
 	<script type="text/javascript" src="js/lightbox/js/lightbox.js"></script>
     <!-- style switcher -->
     <script type="text/javascript" src="js/styleswitcher.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/nivo-slider/jquery.nivo.slider.pack.js"></script>
     
 </head>
 
 <body>
 
-<div class="container" id="page">
-
-	<div id="header">
+<div id="header">
 		<div id="logo"><h2><?php echo CHtml::encode(Yii::app()->name); ?></h2></div>
-	</div><!-- header -->
-    
-    <div id="slider">
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/siswa_guru.png"/>
-    </div>
+</div><!-- header -->
 
-	<div id="navigation-main">
+<div id="navigation-main">
 		<?php 
         //$this->widget('zii.widgets.CMenu',array(
-//			'items'=>array(
+			//'items'=>array(
 //				array('label'=>'Home', 'url'=>array('/site/index')),				
 //				array('label'=>'Siswa', 'url'=>array('/siswa/index'), 'visible'=>!Yii::app()->user->isGuest),
 //				array('label'=>'Absensi', 'url'=>array('/absensi/index'), 'visible'=>!Yii::app()->user->isGuest),
@@ -67,18 +62,45 @@
 //				array('label'=>'Mata Pelajaran', 'url'=>array('/mataPelajaran/index'), 'visible'=>!Yii::app()->user->isGuest),
 //				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 //				array('label'=>'Contact', 'url'=>array('/site/contact')),
-//				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 //				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 //			),
 //		)); 
         include"navigation.php"
         ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
+</div><!-- mainmenu -->
+
+<div class="container">
+    <?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
+</div>
+
+<div class="container" id="page">
+    
+    <div id="slider">
+        <div class="slider-bootstrap"><!-- start slider -->
+    	<div class="slider-wrapper theme-default">
+            <div id="slider-nivo" class="nivoSlider">
+                <img src="<?php echo Yii::app()->request->baseUrl;?>/images/papan_sekolah.png" data-thumb="<?php echo Yii::app()->request->baseUrl;?>/images/papan_sekolah.png" alt="" title="" />
+                <img src="<?php echo Yii::app()->request->baseUrl;?>/images/kelas.png" data-thumb="<?php echo Yii::app()->request->baseUrl;?>/images/kelas.png" alt="" title="" />
+                <img src="<?php echo Yii::app()->request->baseUrl;?>/images/siswa.png" data-thumb="<?php echo Yii::app()->request->baseUrl;?>/images/siswa.png" alt="" data-transition="slideInLeft"  />
+                <img src="<?php echo Yii::app()->request->baseUrl;?>/images/siswa_guru.png" data-thumb="<?php echo Yii::app()->request->baseUrl;?>/images/siswa_guru.png" alt="" title="" />
+            </div>
+        </div>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $('#slider-nivo').nivoSlider({
+                    effect: 'boxRandom',
+                    manualAdvance: false,
+                    controlNav: false
+                });
+            });
+        </script>        
+    </div>
 
 	<?php echo $content; ?>
 

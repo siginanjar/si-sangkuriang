@@ -1,7 +1,7 @@
 body
 {
 	background-color:#ffffff;
-	background-image:url(../img/backgrounds/background1.png);
+	background-image:url(../images/background1.png);
 	background-repeat:repeat;
 }
 
@@ -27,7 +27,7 @@ a,a:hover, a:active,.dropdown-menu .active > a,
   color: #ffffff;
   text-decoration: none;
   text-shadow:#333333 0 1px 0;
-  background-color: #0088CC;
+  background-color: #970000;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
