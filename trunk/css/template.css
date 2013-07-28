@@ -210,10 +210,11 @@ ul.list-icon li{
 }
 
 .footer{
-	
-	
 	padding:20px 20px;
-	
+}
+
+.footer a{
+    color: #cccccc;
 }
 
 hr {

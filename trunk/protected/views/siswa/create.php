@@ -7,11 +7,22 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Siswa', 'url'=>array('index')),
-	array('label'=>'Manage Siswa', 'url'=>array('admin')),
-);
+//$this->menu=array(
+//	array('label'=>'List Siswa', 'url'=>array('index')),
+//	array('label'=>'Manage Siswa', 'url'=>array('admin')),
+//);
 ?>
+
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/index" class="btn btn-danger">
+    <i class="icon-list"></i>
+    &nbsp;
+    <span>List Siswa</span>
+</a>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/admin" class="btn btn-danger">
+    <i class="icon-edit"></i>
+    &nbsp;
+    <span>Manage Siswa</span>
+</a>
 
 <h1>Create Siswa</h1>
 

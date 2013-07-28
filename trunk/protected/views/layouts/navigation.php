@@ -12,47 +12,47 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="active dropdown">
-              <a href="index.php" data-description="beranda sekolah" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="index.php" class="dropdown-toggle">
                 Home
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/index" data-description="daftar siswa" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/index" class="dropdown-toggle">
                 Siswa
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/absensi/index" data-description="cool features" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/absensi/index" class="dropdown-toggle">
                 Absensi
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/index" data-description="what we are about">
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/index">
                 Kelas
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/guru/index" data-description="some of our work" class="dropdown-toggle" data-toggle="dropdown" >
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/guru/index" class="dropdown-toggle" >
                 Guru
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/index" data-description="our services">
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/index">
                 Nilai
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/mataPelajaran/index" data-description="blog examples" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/mataPelajaran/index" class="dropdown-toggle">
                 Mata Pelajaran
               </a>
           </li>          
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/login" data-description="get hold of us">
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/login">
                 Login
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/logout" data-description="get hold of us">
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/logout">
                 Logout
               </a>
           </li>
