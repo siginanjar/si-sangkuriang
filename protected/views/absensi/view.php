@@ -1,7 +1,7 @@
 <?php
-/* @var $this AbsensiController */
-/* @var $model Absensi */
-/*
+ @var $this AbsensiController 
+ @var $model Absensi
+
 $this->breadcrumbs=array(
 	'Absensis'=>array('index'),
 	$model->id_absensi,
@@ -28,4 +28,5 @@ $this->menu=array(
 		'status',
 		'keterangan',
 	),
-)); */?>
+)); ?>
+
