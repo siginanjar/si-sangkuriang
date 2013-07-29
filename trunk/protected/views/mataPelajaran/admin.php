@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List MataPelajaran', 'url'=>array('index')),
 	array('label'=>'Create MataPelajaran', 'url'=>array('create')),
 );
 
