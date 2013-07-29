@@ -28,11 +28,6 @@ $('.search-form form').submit(function(){
 
 <h1>Manage Siswas</h1>
 
-<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/index" class="btn btn-danger">
-    <i class="icon-list"></i>
-    &nbsp;
-    <span>List Siswa</span>
-</a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/create" class="btn btn-danger">
     <i class="icon-edit"></i>
     &nbsp;
