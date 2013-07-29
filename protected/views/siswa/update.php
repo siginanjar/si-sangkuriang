@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Siswa', 'url'=>array('index')),
 	array('label'=>'Create Siswa', 'url'=>array('create')),
 	array('label'=>'View Siswa', 'url'=>array('view', 'id'=>$model->nis)),
 	array('label'=>'Manage Siswa', 'url'=>array('admin')),
