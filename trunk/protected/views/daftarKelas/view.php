@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Daftar Kelases'=>array('index'),
-	$model->id_daftar_kelas,
+	$allt->id_kelas,
 );
 
 $this->menu=array(
@@ -16,15 +16,61 @@ $this->menu=array(
 );
 ?>
 
-<h1>View DaftarKelas #<?php echo $model->id_daftar_kelas; ?></h1>
+<h1>View DaftarKelas #<?php echo $allt->id_kelas; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id_daftar_kelas',
-		'id_kelas',
-		'nis',
-		'tahun_ajaran',
-		'nip',
-	),
+<?php
+//$this->widget('zii.widgets.CDetailView', array(
+//	'data'=>$model,
+//	'attributes'=>array(
+//		'id_daftar_kelas',
+//		'nama_daftar_kelas',
+//		'id_kelas',
+//		'tahun_ajaran',
+//		'nip',
+//		'jumlah_pertemuan',
+//	),
+//)); 
+?>
+
+
+<?php $form=$this->beginwidget('CActiveForm', array()); ?>
+<?php $this->widget('zii.widgets.grid.CGridView',array(
+    'id'=>'daftarKelas-grid',
+    'dataProvider'=>$allt->search(),
+    'emptyText'=>'Belum ada daftar kelas yang terdaftar',
+    'summaryText'=>'',
+    'columns'=>array(
+        array(
+                'name'=>'Nama Daftar Kelas',
+                'type'=>'raw',
+                'value'=>'$data->nama_daftar_kelas',
+        ),
+        array(
+                'name'=>'Absensi',
+                'type'=>'raw',
+                'value'=>'CHtml::link("absensi", array("../index.php/absensi/$data->id_daftar_kelas"))'
+        ),
+        array(
+                'name'=>'Nilai',
+                'type'=>'raw',
+                'value'=>'CHtml::link("Nilai", array("../index.php/nilai/$data->id_daftar_kelas"))'
+        ),
+        array(
+                'class' => 'CButtonColumn',
+                'template' => '{view},{update},{delete}',
+                'buttons' => array(
+                    'view' => array(
+                        'url'=>'Yii::app()->createUrl("daftarKelas/$data->id_kelas?daftarKelasSiswa=$data->id_daftar_kelas")',
+                    ),
+                    'update' => array(
+                        'url'=>'Yii::app()->createUrl("daftarKelas/$data->id_kelas?daftarKelasSiswa=$data->id_daftar_kelas")',
+                    ),
+                    'delete' => array(
+                        'url'=>'Yii::app()->createUrl("daftarKelas/$data->id_kelas?daftarKelasSiswa=$data->id_daftar_kelas")',
+                    ),
+                ),
+            ),
+        ),
 )); ?>
+
+<?php $this->endWidget();?>

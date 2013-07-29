@@ -72,13 +72,13 @@ class Siswa extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'nis' => 'Nis',
+			'nis' => 'NIS',
 			'nama_siswa' => 'Nama Siswa',
 			'tempat_lahir' => 'Tempat Lahir',
 			'tanggal_lahir' => 'Tanggal Lahir',
 			'agama' => 'Agama',
 			'alamat' => 'Alamat',
-			'tahun_ajaran' => 'Tahun Ajaran',
+			'tahun_ajaran' => 'Tahun Masuk',
 			'nama_wali' => 'Nama Wali',
 			'no_tlpn_wali' => 'No Tlpn Wali',
 			'sekolah_asal' => 'Sekolah Asal',

@@ -122,10 +122,19 @@ class GuruController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Guru');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                //index page change to be admin page
+                $model=new Guru('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Guru']))
+			$model->attributes=$_GET['Guru'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
+//		$dataProvider=new CActiveDataProvider('Guru');
+//		$this->render('index',array(
+//			'dataProvider'=>$dataProvider,
+//		));
 	}
 
 	/**

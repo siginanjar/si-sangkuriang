@@ -12,6 +12,11 @@
 )); ?>
 
 	<div class="row">
+		<?php //echo $form->label($model,'id'); ?>
+		<?php //echo $form->textField($model,'id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'tahun_ajaran'); ?>
 		<?php echo $form->textField($model,'tahun_ajaran',array('size'=>20,'maxlength'=>20)); ?>
 	</div>

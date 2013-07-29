@@ -67,7 +67,7 @@ class Guru extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'nip' => 'Nip',
+			'nip' => 'NIP',
 			'nama_guru' => 'Nama Guru',
 			'tempat_lahir' => 'Tempat Lahir',
 			'tanggal_lahir' => 'Tanggal Lahir',

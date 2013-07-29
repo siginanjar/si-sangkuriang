@@ -70,8 +70,10 @@ class MataPelajaranController extends Controller
 		if(isset($_POST['MataPelajaran']))
 		{
 			$model->attributes=$_POST['MataPelajaran'];
+                        $model->nama_pelajaran = $model->nama_pelajaran." ".
+                                $model->id_kelas."/".$model->km_metpel; 
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_mata_pelajaran));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -94,8 +96,10 @@ class MataPelajaranController extends Controller
 		if(isset($_POST['MataPelajaran']))
 		{
 			$model->attributes=$_POST['MataPelajaran'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_mata_pelajaran));
+			$model->nama_pelajaran = $model->nama_pelajaran." ".
+                                $model->id_kelas."/".$model->km_metpel;
+                        if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -122,10 +126,19 @@ class MataPelajaranController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('MataPelajaran');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                //index page change to be admin page
+                $model=new MataPelajaran('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['MataPelajaran']))
+			$model->attributes=$_GET['MataPelajaran'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
+//		$dataProvider=new CActiveDataProvider('MataPelajaran');
+//		$this->render('index',array(
+//			'dataProvider'=>$dataProvider,
+//		));
 	}
 
 	/**

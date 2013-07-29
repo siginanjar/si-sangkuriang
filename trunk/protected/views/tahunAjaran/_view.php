@@ -5,8 +5,12 @@
 
 <div class="view">
 
+	<b><?php //echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	<?php //echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tahun_ajaran')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->tahun_ajaran), array('view', 'id'=>$data->tahun_ajaran)); ?>
+	<?php echo CHtml::encode($data->tahun_ajaran); ?>
 	<br />
 
 

@@ -51,9 +51,37 @@ class DaftarKelasController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		if(isset ($_GET['daftarKelasSiswa']))
+                {
+                    //CGridView
+                    $allt = new DaftarKelasSiswa('search');
+                    $allt->unsetAttributes();
+                    $allt->id_daftar_kelas=$_GET['daftarKelasSiswa'];
+                    
+                    //CDetailView
+                    $dataProvider = new CActiveDataProvider('daftarKelasSiswa');
+
+                    $this->render('viewDaftarSiswa',array(
+                            'dataProvider'=>$dataProvider,
+                            'allt'=>$allt,
+                            'model'=>$this->loadModel($_GET['daftarKelasSiswa']),
+                    ));
+                } else {
+                    //CGridView
+                    $allt = new DaftarKelas('search');
+                    $allt->unsetAttributes();
+                    $allt->id_kelas=$id;
+                    
+                    //CDetailView
+                    $dataProvider = new CActiveDataProvider('kelas');
+                
+                    $this->render('view',array(
+                        'dataProvider'=>$dataProvider,
+                        'allt'=>$allt,
+			//'model'=>$this->loadModel($id),
+                    ));
+                }
+
 	}
 
 	/**
@@ -66,12 +94,15 @@ class DaftarKelasController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+                   
 		if(isset($_POST['DaftarKelas']))
 		{
-			$model->attributes=$_POST['DaftarKelas'];
-                        $model->id_daftar_kelas=$model->id_kelas.substr($model->tahun_ajaran, 0, 4).substr($model->tahun_ajaran, 5, 4).$model->nis;
-                        $model->tahun_ajaran = substr($model->tahun_ajaran, 0, 9); 
+                        $model->attributes=$_POST['DaftarKelas'];
+                        $model->nama_daftar_kelas = "Kelas".$model->id_kelas."-"
+                                .substr($model->tahun_ajaran,2,2)
+                                .substr($model->tahun_ajaran,7,2)."-"
+                                .substr($model->tahun_ajaran,10,6);
+                        
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_daftar_kelas));
 		}
@@ -79,6 +110,7 @@ class DaftarKelasController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+
 	}
 
 	/**
@@ -89,15 +121,16 @@ class DaftarKelasController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+                $model->nama_daftar_kelas = "Kelas".$model->id_kelas."-"
+                                .substr($model->tahun_ajaran,2,2)
+                                .substr($model->tahun_ajaran,7,2)."-"
+                                .substr($model->tahun_ajaran,10,6);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['DaftarKelas']))
 		{
 			$model->attributes=$_POST['DaftarKelas'];
-			$model->id_daftar_kelas=$model->id_kelas.substr($model->tahun_ajaran, 0, 4).substr($model->tahun_ajaran, 5, 4).$model->nis;
-                        $model->tahun_ajaran = substr($model->tahun_ajaran, 0, 9);
                         if($model->save())
 				$this->redirect(array('view','id'=>$model->id_daftar_kelas));
 		}
@@ -126,7 +159,7 @@ class DaftarKelasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('DaftarKelas');
+		$dataProvider=new CActiveDataProvider('Kelas');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

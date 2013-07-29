@@ -12,8 +12,13 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_daftar_kelas'); ?>
-		<?php echo $form->textField($model,'id_daftar_kelas',array('size'=>25,'maxlength'=>25)); ?>
+		<?php //echo $form->label($model,'id_daftar_kelas'); ?>
+		<?php //echo $form->textField($model,'id_daftar_kelas'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'nama_daftar_kelas'); ?>
+		<?php echo $form->textField($model,'nama_daftar_kelas',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">
@@ -22,18 +27,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'nis'); ?>
-		<?php echo $form->textField($model,'nis',array('size'=>8,'maxlength'=>8)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'tahun_ajaran'); ?>
-		<?php echo $form->textField($model,'tahun_ajaran',array('size'=>9,'maxlength'=>9)); ?>
+		<?php echo $form->textField($model,'tahun_ajaran',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'nip'); ?>
 		<?php echo $form->textField($model,'nip',array('size'=>20,'maxlength'=>20)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'jumlah_pertemuan'); ?>
+		<?php echo $form->textField($model,'jumlah_pertemuan'); ?>
 	</div>
 
 	<div class="row buttons">

@@ -33,6 +33,17 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
 
+<?php //$this->widget('zii.widgets.CDetailView', array(
+//	'data'=>$model,
+//	'attributes'=>array(
+//		'id_daftar_kelas',
+//                'id_kelas',
+//                'tahun_ajaran',
+//                'nip',
+//	),
+//)); ?>
+
+
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
@@ -45,18 +56,16 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'id_daftar_kelas',
-		'id_mata_pelajaran',
+		//'id',
 		'nis',
+                'id_mata_pelajaran',
+                'id_daftar_kelas',
 		'nilai_ulangan1',
 		'nilai_ulangan2',
-		/*
 		'nilai_ulangan3',
 		'nilai_uts',
 		'nilai_uas',
 		'nilai_akhir',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

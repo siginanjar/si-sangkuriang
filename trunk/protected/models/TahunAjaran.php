@@ -4,6 +4,7 @@
  * This is the model class for table "tbl_tahun_ajaran".
  *
  * The followings are the available columns in table 'tbl_tahun_ajaran':
+ * @property integer $id
  * @property string $tahun_ajaran
  */
 class TahunAjaran extends CActiveRecord
@@ -35,10 +36,10 @@ class TahunAjaran extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('tahun_ajaran', 'required'),
-			array('tahun_ajaran', 'length', 'max'=>16),
+			array('tahun_ajaran', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('tahun_ajaran', 'safe', 'on'=>'search'),
+			array('id, tahun_ajaran', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +60,7 @@ class TahunAjaran extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'tahun_ajaran' => 'Tahun Ajaran',
 		);
 	}
@@ -74,6 +76,7 @@ class TahunAjaran extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('tahun_ajaran',$this->tahun_ajaran,true);
 
 		return new CActiveDataProvider($this, array(
