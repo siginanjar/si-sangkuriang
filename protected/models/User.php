@@ -92,4 +92,9 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function getGuru() {
+        $modelGuru = Guru::model()->findAll(array('order' => 'nama_guru'));
+        $arrayGuru = CHtml::listData($modelGuru, 'nip', 'nama_guru');
+        return $arrayGuru;
+    }
 }
