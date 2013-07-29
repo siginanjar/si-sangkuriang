@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 15, 2013 at 01:44 
+-- Generation Time: Jul 28, 2013 at 08:53 
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -35,16 +35,12 @@ CREATE TABLE IF NOT EXISTS `tbl_absensi` (
   PRIMARY KEY (`id_absensi`),
   KEY `id_daftar_kelas` (`id_daftar_kelas`),
   KEY `nis` (`nis`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `tbl_absensi`
 --
 
-INSERT INTO `tbl_absensi` (`id_absensi`, `id_daftar_kelas`, `nis`, `tanggal`, `status`, `keterangan`) VALUES
-(2, '1-2012-2013-10110139', '', '2013-06-22 21:56:09', 'Hadir', NULL),
-(4, '1-2012-2013-10110139', '10110139', '2013-06-22 21:58:44', 'Hadir', NULL),
-(5, '1-2012-2013-10110139', '10110139', '2013-06-22 21:59:19', 'Absen', NULL);
 
 -- --------------------------------------------------------
 
@@ -53,22 +49,51 @@ INSERT INTO `tbl_absensi` (`id_absensi`, `id_daftar_kelas`, `nis`, `tanggal`, `s
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_daftar_kelas` (
-  `id_daftar_kelas` varchar(25) NOT NULL,
+  `id_daftar_kelas` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_daftar_kelas` varchar(20) NOT NULL,
   `id_kelas` varchar(10) NOT NULL,
-  `nis` char(8) NOT NULL,
-  `tahun_ajaran` char(9) NOT NULL,
+  `tahun_ajaran` char(20) NOT NULL,
   `nip` char(20) NOT NULL,
+  `jumlah_pertemuan` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_daftar_kelas`),
-  KEY `nis` (`nip`),
   KEY `id_kelas` (`id_kelas`),
-  KEY `nip` (`nip`),
-  KEY `nis_2` (`nis`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `tahun_ajaran` (`tahun_ajaran`),
+  KEY `nip` (`nip`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `tbl_daftar_kelas`
 --
 
+INSERT INTO `tbl_daftar_kelas` (`id_daftar_kelas`, `nama_daftar_kelas`, `id_kelas`, `tahun_ajaran`, `nip`, `jumlah_pertemuan`) VALUES
+(3, 'Kelas1-1213-Ganjil', '1', '2012-2013 Ganjil', '10110121312432141242', 0),
+(4, 'Kelas2-1213-Ganjil', '2', '2012-2013 Ganjil', '10110121312432141242', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_daftar_kelas_siswa`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_daftar_kelas_siswa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_daftar_kelas` int(11) NOT NULL,
+  `nis` char(8) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nis_2` (`nis`),
+  UNIQUE KEY `id_daftar_kelas_2` (`id_daftar_kelas`),
+  UNIQUE KEY `id_daftar_kelas_3` (`id_daftar_kelas`),
+  UNIQUE KEY `nis_3` (`nis`),
+  KEY `nis` (`nis`),
+  KEY `id_daftar_kelas` (`id_daftar_kelas`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `tbl_daftar_kelas_siswa`
+--
+
+INSERT INTO `tbl_daftar_kelas_siswa` (`id`, `id_daftar_kelas`, `nis`) VALUES
+(1, 3, '10110190');
 
 -- --------------------------------------------------------
 
@@ -84,15 +109,14 @@ CREATE TABLE IF NOT EXISTS `tbl_guru` (
   `golongan` char(4) NOT NULL,
   `spesialisai` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_guru`
 --
 
 INSERT INTO `tbl_guru` (`nip`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`, `golongan`, `spesialisai`) VALUES
-('12345678912345678900', 'Aditia', 'Majalengka', '1992-10-05', 'VA', 'Pendidikan Agama Islam'),
-('21984910284912849120', 'Dadang Setiadi', 'Majalanekga', '2013-06-10', '4A', '');
+('10110121312432141242', 'Ableh', 'Jakarta', '2013-07-01', 'IV', '');
 
 -- --------------------------------------------------------
 
@@ -104,19 +128,19 @@ CREATE TABLE IF NOT EXISTS `tbl_kelas` (
   `id_kelas` varchar(10) NOT NULL,
   `nama_kelas` varchar(10) NOT NULL,
   PRIMARY KEY (`id_kelas`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_kelas`
 --
 
 INSERT INTO `tbl_kelas` (`id_kelas`, `nama_kelas`) VALUES
-('Kelas1', 'Kelas 1'),
-('Kelas3', 'K 3'),
-('Kelas2', 'K 2'),
-('Kelas4', 'K 4'),
-('2', 'K 2'),
-('K5', 'Kelas 5');
+('1', 'Kelas 1'),
+('2', 'Kelas 2'),
+('3', 'Kelas 3'),
+('4', 'Kelas 4'),
+('5', 'Kelas 5'),
+('6', 'Kelas 6');
 
 -- --------------------------------------------------------
 
@@ -125,20 +149,21 @@ INSERT INTO `tbl_kelas` (`id_kelas`, `nama_kelas`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_mata_pelajaran` (
-  `id_mata_pelajaran` char(5) NOT NULL,
-  `nama_pelajaran` varchar(20) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_pelajaran` varchar(30) NOT NULL,
   `id_kelas` varchar(10) NOT NULL,
   `km_metpel` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_mata_pelajaran`),
+  PRIMARY KEY (`id`),
   KEY `kelas_pelajaran` (`id_kelas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `tbl_mata_pelajaran`
 --
 
-INSERT INTO `tbl_mata_pelajaran` (`id_mata_pelajaran`, `nama_pelajaran`, `id_kelas`, `km_metpel`) VALUES
-('MTK01', 'Matematika', 'Kelas 1', '2010');
+INSERT INTO `tbl_mata_pelajaran` (`id`, `nama_pelajaran`, `id_kelas`, `km_metpel`) VALUES
+(1, 'Bahasa Inggris', '1', '2010'),
+(2, 'Matematika 1/2010', '1', '2010');
 
 -- --------------------------------------------------------
 
@@ -164,14 +189,14 @@ CREATE TABLE IF NOT EXISTS `tbl_nilai` (
   KEY `id_daftar_kelas` (`id_daftar_kelas`),
   KEY `id_daftar_kelas_2` (`id_daftar_kelas`,`id_mata_pelajaran`),
   KEY `nis_2` (`nis`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `tbl_nilai`
 --
 
 INSERT INTO `tbl_nilai` (`id`, `id_daftar_kelas`, `id_mata_pelajaran`, `nis`, `nilai_ulangan1`, `nilai_ulangan2`, `nilai_ulangan3`, `nilai_uts`, `nilai_uas`, `nilai_akhir`) VALUES
-(2, '1-2011-2012-10110120', 'MTK01', '10110139', 45, 60, 90, 68, 99, 72.4);
+(1, '3', '1', '10110190', 100, 0, 0, 0, 0, 20);
 
 -- --------------------------------------------------------
 
@@ -201,8 +226,7 @@ CREATE TABLE IF NOT EXISTS `tbl_siswa` (
 --
 
 INSERT INTO `tbl_siswa` (`nis`, `nama_siswa`, `tempat_lahir`, `tanggal_lahir`, `agama`, `alamat`, `tahun_ajaran`, `nama_wali`, `no_tlpn_wali`, `sekolah_asal`) VALUES
-('10110130', 'Arif', 'Bojong', '1996-02-08', 'Islam', 'Alamat', '2012-2013 Ganjil', 'Dadang', '081324890473', '-'),
-('10110139', 'Aditia', 'Majalengka', '1992-10-05', 'Islam', 'Bandung', '2010-2011 Ganjil', 'Ani Suryani', '081324890473', NULL);
+('10110190', 'Thohir', 'Majalaya', '2013-07-17', 'Islam', 'Bancakan', '2012-2013 Ganjil', 'Togar', '021941202494343', '-');
 
 -- --------------------------------------------------------
 
@@ -211,17 +235,89 @@ INSERT INTO `tbl_siswa` (`nis`, `nama_siswa`, `tempat_lahir`, `tanggal_lahir`, `
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_tahun_ajaran` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tahun_ajaran` char(20) NOT NULL,
-  PRIMARY KEY (`tahun_ajaran`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tahun_ajaran` (`tahun_ajaran`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `tbl_tahun_ajaran`
 --
 
-INSERT INTO `tbl_tahun_ajaran` (`tahun_ajaran`) VALUES
-('2010-2011 Genap'),
-('2012-2013 Genap');
+INSERT INTO `tbl_tahun_ajaran` (`id`, `tahun_ajaran`) VALUES
+(1, '2012-2013 Ganjil');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_user` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `level_user` int(11) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_usersiswa`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_usersiswa` (
+  `username` char(8) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `level_user` int(11) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_usersiswa`
+--
+
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_daftar_kelas`
+--
+ALTER TABLE `tbl_daftar_kelas`
+  ADD CONSTRAINT `tbl_daftar_kelas_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `tbl_kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_daftar_kelas_ibfk_3` FOREIGN KEY (`nip`) REFERENCES `tbl_guru` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_mata_pelajaran`
+--
+ALTER TABLE `tbl_mata_pelajaran`
+  ADD CONSTRAINT `tbl_mata_pelajaran_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `tbl_kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_nilai`
+--
+ALTER TABLE `tbl_nilai`
+  ADD CONSTRAINT `tbl_nilai_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `tbl_siswa` (`nis`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD CONSTRAINT `tbl_user_ibfk_1` FOREIGN KEY (`username`) REFERENCES `tbl_guru` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_usersiswa`
+--
+ALTER TABLE `tbl_usersiswa`
+  ADD CONSTRAINT `tbl_usersiswa_ibfk_1` FOREIGN KEY (`username`) REFERENCES `tbl_siswa` (`nis`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
