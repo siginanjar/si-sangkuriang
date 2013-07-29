@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Kelas', 'url'=>array('index')),
 	array('label'=>'Create Kelas', 'url'=>array('create')),
 	array('label'=>'View Kelas', 'url'=>array('view', 'id'=>$model->id_kelas)),
 	array('label'=>'Manage Kelas', 'url'=>array('admin')),
