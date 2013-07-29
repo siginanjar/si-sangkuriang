@@ -72,13 +72,16 @@ class DaftarKelasController extends Controller
                     $allt->unsetAttributes();
                     $allt->id_kelas=$id;
                     
+					$model = new DaftarKelas('search');
+					$model->id_kelas=$id;
+					
                     //CDetailView
                     $dataProvider = new CActiveDataProvider('kelas');
                 
                     $this->render('view',array(
                         'dataProvider'=>$dataProvider,
                         'allt'=>$allt,
-			//'model'=>$this->loadModel($id),
+			'model'=>$model,
                     ));
                 }
 
