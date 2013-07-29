@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List MataPelajaran', 'url'=>array('index')),
 	array('label'=>'Create MataPelajaran', 'url'=>array('create')),
 	array('label'=>'View MataPelajaran', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage MataPelajaran', 'url'=>array('admin')),
