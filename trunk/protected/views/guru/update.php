@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Guru', 'url'=>array('index')),
 	array('label'=>'Create Guru', 'url'=>array('create')),
 	array('label'=>'View Guru', 'url'=>array('view', 'id'=>$model->nip)),
 	array('label'=>'Manage Guru', 'url'=>array('admin')),

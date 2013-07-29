@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Guru', 'url'=>array('index')),
 	array('label'=>'Manage Guru', 'url'=>array('admin')),
 );
 ?>

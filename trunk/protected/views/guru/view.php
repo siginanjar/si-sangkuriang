@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Guru', 'url'=>array('index')),
 	array('label'=>'Create Guru', 'url'=>array('create')),
 	array('label'=>'Update Guru', 'url'=>array('update', 'id'=>$model->nip)),
 	array('label'=>'Delete Guru', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->nip),'confirm'=>'Are you sure you want to delete this item?')),
