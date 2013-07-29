@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Siswa', 'url'=>array('index')),
 	array('label'=>'Create Siswa', 'url'=>array('create')),
 	array('label'=>'Update Siswa', 'url'=>array('update', 'id'=>$model->nis)),
 	array('label'=>'Delete Siswa', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->nis),'confirm'=>'Are you sure you want to delete this item?')),
