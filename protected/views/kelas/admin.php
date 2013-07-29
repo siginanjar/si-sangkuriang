@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Kelas', 'url'=>array('index')),
 	array('label'=>'Create Kelas', 'url'=>array('create')),
 );
 
