@@ -206,7 +206,7 @@ class AbsensiController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Kelas');
+        $dataProvider = new CActiveDataProvider('DaftarKelas');
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));
