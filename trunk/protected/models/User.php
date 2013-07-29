@@ -97,4 +97,7 @@ class User extends CActiveRecord
         $arrayGuru = CHtml::listData($modelGuru, 'nip', 'nama_guru');
         return $arrayGuru;
     }
+    public function hashPassword($phrase){
+    return hash('md5', $phrase);
+    }
 }
