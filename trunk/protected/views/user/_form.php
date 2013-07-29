@@ -15,9 +15,10 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->dropDownList($model,'username',$model->getGuru()); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
