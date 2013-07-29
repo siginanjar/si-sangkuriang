@@ -71,7 +71,7 @@ class TahunAjaranController extends Controller
 		{
 			$model->attributes=$_POST['TahunAjaran'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->tahun_ajaran));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class TahunAjaranController extends Controller
 		{
 			$model->attributes=$_POST['TahunAjaran'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->tahun_ajaran));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -122,10 +122,20 @@ class TahunAjaranController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('TahunAjaran');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                //index page change to be admin page
+                $model=new TahunAjaran('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['TahunAjaran']))
+			$model->attributes=$_GET['TahunAjaran'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
+            
+//		$dataProvider=new CActiveDataProvider('TahunAjaran');
+//		$this->render('index',array(
+//			'dataProvider'=>$dataProvider,
+//		));
 	}
 
 	/**

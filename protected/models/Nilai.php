@@ -71,15 +71,15 @@ class Nilai extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_daftar_kelas' => 'Id Kelas',
+			'id_daftar_kelas' => 'Kelas',
 			'id_mata_pelajaran' => 'Mata Pelajaran',
 			'nis' => 'Siswa',
-			'nilai_ulangan1' => 'Nilai Ulangan 1',
-			'nilai_ulangan2' => 'Nilai Ulangan 2',
-			'nilai_ulangan3' => 'Nilai Ulangan 3',
-			'nilai_uts' => 'Nilai UTS',
-			'nilai_uas' => 'Nilai UAS',
-			'nilai_akhir' => 'Nilai Akhir',
+			'nilai_ulangan1' => 'Ulangan 1',
+			'nilai_ulangan2' => 'Ulangan 2',
+			'nilai_ulangan3' => 'Ulangan 3',
+			'nilai_uts' => 'UTS',
+			'nilai_uas' => 'UAS',
+			'nilai_akhir' => 'NA',
 		);
 	}
 
@@ -113,7 +113,7 @@ class Nilai extends CActiveRecord
         public function getDaftarKelas ()
         {
             $modelDaftarKelas = DaftarKelas::model()->findAll(array('order'=>'id_kelas'));
-            $arrayDaftarKelas = CHtml::listData($modelKelas, 'id_kelas', 'nama_kelas');
+            $arrayDaftarKelas = CHtml::listData($modelDaftarKelas, 'id_daftar_kelas', 'nama_daftar_kelas');
             return $arrayDaftarKelas;
         }
         
@@ -127,7 +127,7 @@ class Nilai extends CActiveRecord
         public function getMataPelajaran ()
         {
             $modelMataPelajaran = MataPelajaran::model()->findAll(array('order'=>'nama_pelajaran'));
-            $arrayMataPelajaran = CHtml::listData($modelMataPelajaran, 'id_mata_pelajaran', 'nama_pelajaran');
+            $arrayMataPelajaran = CHtml::listData($modelMataPelajaran, 'id', 'nama_pelajaran');
             return $arrayMataPelajaran;
         }
 }

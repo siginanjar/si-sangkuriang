@@ -16,9 +16,10 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Nilai #<?php echo $model->id; ?></h1>
+<h1>View Nilai Siswa Kelas#<?php echo $model->id; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php 
+$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
@@ -32,4 +33,67 @@ $this->menu=array(
 		'nilai_uas',
 		'nilai_akhir',
 	),
+)); 
+?>
+
+
+<?php $form=$this->beginwidget('CActiveForm', array(
+)); 
+$modol = "90";?>
+<?php $this->widget('zii.widgets.grid.CGridView',array(
+    'id'=>'daftarKelas-grid',
+    'dataProvider'=>$allt->search(),
+    'emptyText'=>'Belum ada daftar kelas yang terdaftar',
+    'summaryText'=>'',
+    'columns'=>array(
+        array(
+                'name'=>'Mata Pelajaran',
+                'type'=>'raw',
+                'value'=>'$data->id_mata_pelajaran',
+        ),
+        array(
+                'name'=>'Ulangan 1',
+                'type'=>'raw',
+                'value'=>'$data->nilai_ulangan1',
+        ),
+        array(
+                'name'=>'Ulangan 2',
+                'type'=>'raw',
+                'value'=>'$data->nilai_ulangan2',
+        ),
+        array(
+                'name'=>'Ulangan 3',
+                'type'=>'raw',
+                'value'=>'$data->nilai_ulangan3',
+        ),
+        array(
+                'name'=>'UTS',
+                'type'=>'raw',
+                'value'=>'$data->nilai_uts',
+        ),
+        array(
+                'name'=>'UAS',
+                'type'=>'raw',
+                'value'=>'$data->id_kelas',
+        ),
+        array(
+                'name'=>'Nilai Akhir',
+                'type'=>'raw',
+                'value'=>'$data->nilai_akhir',
+        ),
+        array(
+                'class' => 'CButtonColumn',
+                'template' => '{view}',
+                'buttons' => array(
+                    'view' => array(
+                        'url'=>'Yii::app()->createUrl("nilai/update/$data->id")',
+                    ),
+//                    'delete' => array(
+//                        'url'=>'Yii::app()->createUrl("nilai/delete/$data->id")',
+//                    ),
+                ),
+            ),
+        ),
 )); ?>
+
+<?php $this->endWidget();?>

@@ -122,10 +122,19 @@ class SiswaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Siswa');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                //Index page change to be admin page
+                $model=new Siswa('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Siswa']))
+			$model->attributes=$_GET['Siswa'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
+//		$dataProvider=new CActiveDataProvider('Siswa');
+//		$this->render('index',array(
+//			'dataProvider'=>$dataProvider,
+//		));
 	}
 
 	/**

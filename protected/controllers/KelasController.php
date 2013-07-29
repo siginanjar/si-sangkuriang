@@ -126,10 +126,18 @@ class KelasController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Kelas');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+                $model=new Kelas('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Kelas']))
+			$model->attributes=$_GET['Kelas'];
+
+		$this->render('admin',array(
+			'model'=>$model,
 		));
+//		$dataProvider=new CActiveDataProvider('Kelas');
+//		$this->render('index',array(
+//			'dataProvider'=>$dataProvider,
+//		));
 	}
 
 	/**

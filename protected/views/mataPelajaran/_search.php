@@ -12,8 +12,8 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_mata_pelajaran'); ?>
-		<?php echo $form->textField($model,'id_mata_pelajaran',array('size'=>5,'maxlength'=>5)); ?>
+		<?php //echo $form->label($model,'id'); ?>
+		<?php //echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">

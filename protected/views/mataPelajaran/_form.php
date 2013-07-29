@@ -16,12 +16,6 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_mata_pelajaran'); ?>
-		<?php echo $form->textField($model,'id_mata_pelajaran',array('size'=>5,'maxlength'=>5)); ?>
-		<?php echo $form->error($model,'id_mata_pelajaran'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'nama_pelajaran'); ?>
 		<?php echo $form->textField($model,'nama_pelajaran',array('size'=>20,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'nama_pelajaran'); ?>
@@ -29,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_kelas'); ?>
-		<?php echo $form->textField($model,'id_kelas',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->dropDownList($model,'id_kelas',$model->getKelas(),array('empty'=>'--Pilih Kategori Kelas--')); ?>
 		<?php echo $form->error($model,'id_kelas'); ?>
 	</div>
 

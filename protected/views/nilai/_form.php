@@ -17,19 +17,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_daftar_kelas'); ?>
-		<?php echo $form->textField($model,'id_daftar_kelas',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->dropDownList($model,'id_daftar_kelas',$model->getDaftarKelas(),array('empty'=>'--Pilih Kategori Daftar Kelas--')); ?>
 		<?php echo $form->error($model,'id_daftar_kelas'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_mata_pelajaran'); ?>
-		<?php echo $form->dropDownList($model,'id_mata_pelajaran',$model->getMataPelajaran()); ?>
+		<?php echo $form->dropDownList($model,'id_mata_pelajaran',$model->getMataPelajaran(),array('empty'=>'--Pilih Mata Pelajaran--')); ?>
 		<?php echo $form->error($model,'id_mata_pelajaran'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nis'); ?>
-		<?php echo $form->dropDownList($model,'nis',$model->getSiswa()); ?>
+		<?php echo $form->dropDownList($model,'nis',$model->getSiswa(),array('empty'=>'--Pilih Siswa--')); ?>
 		<?php echo $form->error($model,'nis'); ?>
 	</div>
 

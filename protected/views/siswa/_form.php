@@ -67,7 +67,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tahun_ajaran'); ?>
-		<?php echo $form->dropDownList($model,'tahun_ajaran',$model->getTahunAjaran()); ?>
+		<?php echo $form->dropDownList($model,'tahun_ajaran',$model->getTahunAjaran(),array('empty'=>'--Pilih Tahun Masuk Ajaran--')); ?>
 		<?php echo $form->error($model,'tahun_ajaran'); ?>
 	</div>
 

@@ -4,18 +4,18 @@
 
 $this->breadcrumbs=array(
 	'Mata Pelajarans'=>array('index'),
-	$model->id_mata_pelajaran=>array('view','id'=>$model->id_mata_pelajaran),
+	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );
 
 $this->menu=array(
 	array('label'=>'List MataPelajaran', 'url'=>array('index')),
 	array('label'=>'Create MataPelajaran', 'url'=>array('create')),
-	array('label'=>'View MataPelajaran', 'url'=>array('view', 'id'=>$model->id_mata_pelajaran)),
+	array('label'=>'View MataPelajaran', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage MataPelajaran', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update MataPelajaran <?php echo $model->id_mata_pelajaran; ?></h1>
+<h1>Update MataPelajaran <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
