@@ -76,18 +76,8 @@ class AbsensiController extends Controller {
 //                'model' => $model->id_daftar_kelas = $_GET['nilai'],
 //            ));
         } else {
-            $model = new DaftarKelas('search');
-            $allt = new DaftarKelas('search');
-            $allt->unsetAttributes();
-            $allt->id_kelas = $id;
-
-            $dataProvider = new CActiveDataProvider('DaftarKelas');
-
-            $this->render('view', array(
-                'allt' => $allt,
-                'dataProvider' => $dataProvider,
-                'model' => $model->id_kelas = $id,
-            ));
+            
+			
         }
     }
 
