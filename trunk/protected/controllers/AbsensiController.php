@@ -62,21 +62,25 @@ class AbsensiController extends Controller {
                 'dataProvider' => $dataProvider,
                 'model' => $model->id_daftar_kelas = $_GET['Absensi'],
             ));
-//        } else if (isset($_GET['nilai'])) {
-//            $model = new Nilai('search');
-//            $allt = new Nilai('search');
-//            $allt->unsetAttributes();
-//            $allt->nis = $_GET['nilai'];
-//
-//            $dataProvider = new CActiveDataProvider('Nilai');
-//
-//            $this->render('view', array(
-//                'allt' => $allt,
-//                'dataProvider' => $dataProvider,
-//                'model' => $model->id_daftar_kelas = $_GET['nilai'],
-//            ));
+
         } else {
-            
+		
+		$criteria=new CDbCriteria(array(
+			//order by
+	  		'order'=>'id_daftar_kelas DESC',
+	  		'condition'=>'id_kelas='.$id.''
+		));
+		
+		$peserta=DaftarKelas::model()->findAll($criteria);
+		$kelas=Kelas::model()->findByAttributes(array('id_kelas'=>$id));
+		//$DaftarKelas=DaftarKelas::model()->findAll($criteria);
+		$DaftarKelas = new DaftarKelas('search');
+		$DaftarKelas->id_kelas = $id;
+		$this->render('dataabsensi',array(
+			'data'=>$peserta,
+			'kelas'=>$kelas,
+			'DaftarKelas'=>$DaftarKelas,
+		));
 			
         }
     }
@@ -85,22 +89,83 @@ class AbsensiController extends Controller {
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
-    public function actionCreate() {
-        $model = new Absensi;
-
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
-        if (isset($_POST['Absensi'])) {
-            $model->attributes = $_POST['Absensi'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id_absensi));
-        }
-
-        $this->render('create', array(
-            'model' => $model,
-        ));
-    }
+	public function actionCreate($id)
+	{
+		$model=new Dataabsensi('search');
+		
+		if($_POST['Dataabsensi'])
+		{
+			 
+			for($i=1;$i<=$_POST['jumlahloop'];$i++){
+				//$model->attributes=$_POST['Dataabsensi'];
+				
+				//$model=Dataabsensi::model()->findByPk($_POST['idabsn'.$i]);
+				$model=new Dataabsensi;
+				$model->nis=$_POST['idp'.$i];
+				$model->id_kelas=$_POST['idkelas'];
+				$model->pertemuanke=$_POST['pke'];
+				$model->absensi=$_POST['absn'.$i];
+			
+				$model->save();
+				/*
+				$sql="UPDATE dataabsensi set pertemuanke='".$_POST['pke']."',absensi='".$_POST['absn'.$i]."' WHERE peserta_id='".$_POST['idp'.$i]."' AND id_kelas='".$_POST['idkelas']."'";
+				$conncection=Yii::app()->db;
+				$command=$conncection->createCommand($sql);
+				$command->execute();*/
+			}
+			if(!$model->save()){
+				Yii::app()->user->setFlash('error', "Data absensi tidak bisa disimpan karena pertemuan sudah habis!"); 
+			}else{
+				Yii::app()->user->setFlash('success', "Data absensi berhasil disimpan!"); 
+			}
+			
+		}
+		$criteria=new CDbCriteria(array(
+			//order by
+	  		'order'=>'id DESC',
+	  		'condition'=>'id_kelas='.$id_kelas.''		 
+		));
+		
+		//untuk find semua data dengan parameter $criteria	
+		$peserta = siswa::model()->findAll($criteria);
+		
+		
+		$criteriapertemuan=new CDbCriteria(array(
+			//order by
+	  		'order'=>'pertemuanke DESC LIMIT 0,1',
+	  		'condition'=>'kelas_id='.$id_kelas.'', 
+	  			 
+		));
+		$pertemuan = Dataabsensi::model()->findAll($criteriapertemuan);
+		 
+		//namakelas
+		$namakelas=Kelas::model()->findByPk($id_kelas);
+		
+		$this->render('create',array(
+			'model'=>$model,
+			'peserta'=>$peserta,
+			'id'=>$id_kelas,
+			'pertemuanke'=>$pertemuan,
+			'namakelas'=>$namakelas,
+			'jloop'=>count($peserta)
+		));
+	}
+	public function actionDataabsensi($id_kelas){
+		$criteria=new CDbCriteria(array(
+			//order by
+	  		'order'=>'id DESC',
+	  		'condition'=>'kelas_id='.$id_kelas.''
+		));
+		
+		$peserta=Peserta::model()->findAll($criteria);
+		$kelas=Kelas::model()->findByAttributes(array('id'=>$id_kelas));
+		$DaftarKelas=DaftarKelas::model()->findByAttributes(array('id'=>$id_daftar_kelas));
+		$this->render('dataabsensi',array(
+			'data'=>$peserta,
+			'kelas'=>$kelas,
+			'DaftarKelas'=>$DaftarKelas,
+		));
+	}
 
     /**
      * Updates a particular model.
