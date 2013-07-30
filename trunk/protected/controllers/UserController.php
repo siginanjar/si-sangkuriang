@@ -29,7 +29,11 @@ class UserController extends Controller
         
 		return array(
         array('allow',
+<<<<<<< .mine
+                    'actions'=>array('index','view','update','delete','admin','create'),
+=======
                     'actions'=>array('index','view','update','admin'),
+>>>>>>> .r52
                     'expression'=>'$user->getLevel()==1',
             ),
         array('allow',
