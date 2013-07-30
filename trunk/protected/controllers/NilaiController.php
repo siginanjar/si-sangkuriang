@@ -24,6 +24,8 @@ class NilaiController extends Controller {
      * @return array access control rules
      */
     public function accessRules() {
+        
+		return array(
         array('allow',
                     'actions'=>array('index','view','update','delete','admin','create'),
                     'expression'=>'$user->getLevel()<=3',
