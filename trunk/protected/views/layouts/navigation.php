@@ -64,7 +64,7 @@
                     ),
                     array(
                           'label'=>'Absensi',
-                          'url'=>array('/absensi/index'),
+                          'url'=>array('/daftarKelas/index'),
                           'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
