@@ -1,4 +1,4 @@
-<style>
+<?php /*<style>
     table{border-collapse: collapse;}
     th{border:solid 1px;}
     td{border:solid 1px;}
@@ -74,4 +74,5 @@ echo '<div class=flash-' . $key . '>' . $messege . '</div>';
 </table>
 <?php echo CHtml::submitButton('create'); ?>
 <?php echo CHtml::endform(); ?>
+*/?>
 	  
