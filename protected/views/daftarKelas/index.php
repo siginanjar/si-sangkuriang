@@ -12,17 +12,17 @@ $this->breadcrumbs=array(
 //);
 ?>
 
-<h1>Daftar Kelases</h1>
+<h2>Daftar Kelas</h2>
 
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/index" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Daftar Kelas</span>
+    <span>Tambah Daftar Kelas</span>
 </a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/admin" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
-    <span>Manage Daftar Kelas</span>
+    <span>Kelola Daftar Kelas</span>
 </a>
 
 <?php $this->widget('zii.widgets.CListView', array(

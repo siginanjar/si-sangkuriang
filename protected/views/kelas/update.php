@@ -15,22 +15,22 @@ $this->breadcrumbs=array(
 //);
 ?>
 
+<h2>Perbarui Kelas <?php echo $model->id_kelas; ?></h2>
+
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Kelas</span>
+    <span>Tambah Kelas</span>
 </a>
-<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/admin" class="btn btn-danger">
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/view" class="btn btn-danger">
     <i class="icon-file"></i>
     &nbsp;
-    <span>View Kelas</span>
+    <span>Lihat Kelas</span>
 </a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/admin" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
-    <span>Manage Kelas</span>
+    <span>Kelola Kelas</span>
 </a>
-
-<h1>Update Kelas <?php echo $model->id_kelas; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

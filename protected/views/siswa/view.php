@@ -15,17 +15,17 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Siswa #<?php echo $model->nis; ?></h1>
+<h2>Lihat Siswa #<?php echo $model->nis; ?></h2>
 
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Siswa</span>
+    <span>Tambah Siswa</span>
 </a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/admin" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
-    <span>Manage Siswa</span>
+    <span>Kelola Siswa</span>
 </a>
 
 <?php $this->widget('zii.widgets.CDetailView', array(

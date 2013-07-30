@@ -18,18 +18,8 @@
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/index" class="dropdown-toggle">
-                Siswa
-              </a>
-          </li>
-          <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/absensi/index" class="dropdown-toggle">
-                Absensi
-              </a>
-          </li>
-          <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/index">
-                Kelas
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/tahunAjaran/index" class="dropdown-toggle">
+                Tahun Ajaran
               </a>
           </li>
           <li>
@@ -38,13 +28,33 @@
               </a>
           </li>
           <li>
-              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/index">
-                Nilai
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/index">
+                Kelas
+              </a>
+          </li>
+          <li>
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/index">
+                Daftar Kelas
+              </a>
+          </li>
+          <li>
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/index" class="dropdown-toggle">
+                Siswa
               </a>
           </li>
           <li>
               <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/mataPelajaran/index" class="dropdown-toggle">
                 Mata Pelajaran
+              </a>
+          </li>
+          <li>
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/absensi/index" class="dropdown-toggle">
+                Absensi
+              </a>
+          </li>
+          <li>
+              <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/index">
+                Nilai
               </a>
           </li>-->
           <li>
@@ -58,33 +68,51 @@
                           'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
-                          'label'=>'Siswa',
-                          'url'=>array('/siswa/index'),
-                          'itemOptions'=>array('class'=>'nav'),
+                        'label'=>'Tahun Ajaran',
+                        'url'=>array('/tahunAjaran/index'),
+                        'visible'=>!Yii::app()->user->isGuest,
+                        'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
-                          'label'=>'Absensi',
-                          'url'=>array('/daftarKelas/index'),
+                          'label'=>'Guru',
+                          'url'=>array('/guru/index'),
+                          'visible'=>!Yii::app()->user->isGuest,
                           'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
                           'label'=>'Kelas',
                           'url'=>array('/kelas/index'),
+                          'visible'=>!Yii::app()->user->isGuest,
                           'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
-                          'label'=>'Guru',
-                          'url'=>array('/guru/index'),
+                          'label'=>'Daftar Kelas',
+                          'url'=>array('/daftarKelas/index'),
+                          'visible'=>!Yii::app()->user->isGuest,
                           'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
-                          'label'=>'Nilai',
-                          'url'=>array('/nilai/index'),
+                          'label'=>'Siswa',
+                          'url'=>array('/siswa/index'),
+                          'visible'=>!Yii::app()->user->isGuest,
                           'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
                           'label'=>'Mata Pelajaran',
                           'url'=>array('/mataPelajaran/index'),
+                          'visible'=>!Yii::app()->user->isGuest,
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Absensi',
+                          'url'=>array('/absensi/index'),
+                          'visible'=>!Yii::app()->user->isGuest,
+                          'itemOptions'=>array('class'=>'nav'),
+                    ),
+                    array(
+                          'label'=>'Nilai',
+                          'url'=>array('/nilai/index'),
+                          'visible'=>!Yii::app()->user->isGuest,
                           'itemOptions'=>array('class'=>'nav'),
                     ),
                     array(
