@@ -7,10 +7,10 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Nilai', 'url'=>array('index')),
-	array('label'=>'Create Nilai', 'url'=>array('create')),
-);
+//$this->menu=array(
+//	array('label'=>'List Nilai', 'url'=>array('index')),
+//	array('label'=>'Create Nilai', 'url'=>array('create')),
+//);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -28,10 +28,16 @@ $('.search-form form').submit(function(){
 
 <h1>Manage Nilais</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/create" class="btn btn-danger">
+    <i class="icon-plus-sign"></i>
+    &nbsp;
+    <span>Create Nilai</span>
+</a>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/index" class="btn btn-danger">
+    <i class="icon-book"></i>
+    &nbsp;
+    <span>List Nilai</span>
+</a>
 
 <?php //$this->widget('zii.widgets.CDetailView', array(
 //	'data'=>$model,

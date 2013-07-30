@@ -17,6 +17,17 @@ $this->menu=array(
 
 <h1>View MataPelajaran #<?php echo $model->id; ?></h1>
 
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/mataPelajaran/create" class="btn btn-danger">
+    <i class="icon-plus-sign"></i>
+    &nbsp;
+    <span>Create Mata Pelajaran</span>
+</a>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/mataPelajaran/admin" class="btn btn-danger">
+    <i class="icon-book"></i>
+    &nbsp;
+    <span>Manage Mata Pelajaran</span>
+</a>
+
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
