@@ -14,7 +14,6 @@ class AbsensiController extends Controller {
     public function filters() {
         return array(
             'accessControl', // perform access control for CRUD operations
-            'postOnly + delete', // we only allow deletion via POST request
         );
     }
 
@@ -151,7 +150,7 @@ class AbsensiController extends Controller {
 			'jloop'=>count($peserta)
 		));
 	}
-	public function actionDataabsensi($id_kelas){
+	public function actionDataabsensi($id){
 		$criteria=new CDbCriteria(array(
 			//order by
 	  		'order'=>'id DESC',
