@@ -26,7 +26,8 @@ class KelasController extends Controller
 	 */
 	public function accessRules()
 	{
-		array('allow',
+		return array(
+        array('allow',
                     'actions'=>array('index','view','update','delete','admin','create'),
                     'expression'=>'$user->getLevel()==1',
             ),
@@ -46,8 +47,7 @@ class KelasController extends Controller
 				'users'=>array('*'),
 			),
 	
-        
-        );
+         );
 	}
 
 	/**
