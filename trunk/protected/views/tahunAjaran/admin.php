@@ -7,9 +7,9 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'Create TahunAjaran', 'url'=>array('create')),
-);
+//$this->menu=array(
+//	array('label'=>'Create TahunAjaran', 'url'=>array('create')),
+//);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -25,9 +25,15 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Tahun Ajaran</h1>
+<h2>Kelola Tahun Ajaran</h2>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/tahunAjaran/create" class="btn btn-danger">
+    <i class="icon-plus-sign"></i>
+    &nbsp;
+    <span>Tambah Tahun Ajaran</span>
+</a>
+
+<?php echo CHtml::link('Pencarian','#',array('class'=>'btn btn-danger search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

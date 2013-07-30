@@ -13,17 +13,17 @@ $this->breadcrumbs=array(
 //);
 ?>
 
+<h2>Tambah Siswa</h2>
+
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/index" class="btn btn-danger">
     <i class="icon-list"></i>
     &nbsp;
-    <span>List Siswa</span>
+    <span>Daftar Siswa</span>
 </a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/admin" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
-    <span>Manage Siswa</span>
+    <span>Kelola Siswa</span>
 </a>
-
-<h1>Create Siswa</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

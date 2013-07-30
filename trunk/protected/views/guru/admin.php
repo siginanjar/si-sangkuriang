@@ -25,15 +25,15 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Gurus</h1>
+<h2>Kelola Guru</h2>
 
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/guru/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Guru</span>
+    <span>Tambah Guru</span>
 </a>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'btn btn-danger search-button')); ?>
+<?php echo CHtml::link('Pencarian','#',array('class'=>'btn btn-danger search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

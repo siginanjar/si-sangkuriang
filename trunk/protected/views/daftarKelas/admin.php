@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Daftar Kelases</h1>
+<h2>Kelola Daftar Kelas</h2>
 
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/index" class="btn btn-danger">
     <i class="icon-list"></i>
@@ -36,10 +36,10 @@ $('.search-form form').submit(function(){
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Daftar Kelas</span>
+    <span>Tambah Daftar Kelas</span>
 </a>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'btn btn-danger search-button')); ?>
+<?php echo CHtml::link('Pencarian','#',array('class'=>'btn btn-danger search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,

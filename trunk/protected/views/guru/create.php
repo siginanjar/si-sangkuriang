@@ -12,12 +12,12 @@ $this->breadcrumbs=array(
 //);
 ?>
 
+<h2>Tambah Guru</h2>
+
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/guru/admin" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
-    <span>Manage Guru</span>
+    <span>Kelola Guru</span>
 </a>
-
-<h1>Create Guru</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

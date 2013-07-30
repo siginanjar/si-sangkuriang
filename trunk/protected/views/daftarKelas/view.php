@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 	$allt->id_kelas,
 );
 
-<<<<<<< .mine
+
 //$this->menu=array(
 //	array('label'=>'List DaftarKelas', 'url'=>array('index')),
 //	array('label'=>'Create DaftarKelas', 'url'=>array('create')),
@@ -15,27 +15,19 @@ $this->breadcrumbs=array(
 //	array('label'=>'Delete DaftarKelas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_daftar_kelas),'confirm'=>'Are you sure you want to delete this item?')),
 //	array('label'=>'Manage DaftarKelas', 'url'=>array('admin')),
 //);
-=======
-$this->menu=array(
-	array('label'=>'Create DaftarKelas', 'url'=>array('create')),
-	array('label'=>'Update DaftarKelas', 'url'=>array('update', 'id'=>$model->id_daftar_kelas)),
-	array('label'=>'Delete DaftarKelas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_daftar_kelas),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage DaftarKelas', 'url'=>array('admin')),
-);
->>>>>>> .r63
 ?>
 
-<h1>View DaftarKelas #<?php echo $allt->id_kelas; ?></h1>
+<h2>Lihat Daftar Kelas #<?php echo $allt->id_kelas; ?></h2>
 
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Daftar Kelas</span>
+    <span>Tambah Daftar Kelas</span>
 </a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/admin" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
-    <span>Manage Daftar Kelas</span>
+    <span>Kelola Daftar Kelas</span>
 </a>
 
 <?php

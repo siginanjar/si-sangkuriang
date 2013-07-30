@@ -25,15 +25,15 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Kelases</h1>
+<h2>Kelola Kelas</h2>
 
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Kelas</span>
+    <span>Tambah Kelas</span>
 </a>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'btn btn-danger search-button')); ?>
+<?php echo CHtml::link('Pencarian','#',array('class'=>'btn btn-danger search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
