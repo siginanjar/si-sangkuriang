@@ -15,6 +15,17 @@ $this->menu=array(
 );
 ?>
 
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/create" class="btn btn-danger">
+    <i class="icon-plus-sign"></i>
+    &nbsp;
+    <span>Create Kelas</span>
+</a>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/kelas/admin" class="btn btn-danger">
+    <i class="icon-book"></i>
+    &nbsp;
+    <span>Manage Kelas</span>
+</a>
+
 <h1>View Kelas #<?php echo $model->id_kelas; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(

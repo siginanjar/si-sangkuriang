@@ -18,6 +18,17 @@ $this->menu=array(
 
 <h1>View Nilai Siswa Kelas#<?php echo $model->id; ?></h1>
 
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/create" class="btn btn-danger">
+    <i class="icon-plus-sign"></i>
+    &nbsp;
+    <span>Create Nilai</span>
+</a>
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/admin" class="btn btn-danger">
+    <i class="icon-book"></i>
+    &nbsp;
+    <span>Manage Nilai</span>
+</a>
+
 <?php 
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

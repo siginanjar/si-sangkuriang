@@ -7,10 +7,16 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'Manage Guru', 'url'=>array('admin')),
-);
+//$this->menu=array(
+//	array('label'=>'Manage Guru', 'url'=>array('admin')),
+//);
 ?>
+
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/guru/admin" class="btn btn-danger">
+    <i class="icon-book"></i>
+    &nbsp;
+    <span>Manage Guru</span>
+</a>
 
 <h1>Create Guru</h1>
 

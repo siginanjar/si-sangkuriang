@@ -23,7 +23,7 @@ $this->menu=array(
     <span>Create Siswa</span>
 </a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/siswa/admin" class="btn btn-danger">
-    <i class="icon-edit"></i>
+    <i class="icon-book"></i>
     &nbsp;
     <span>Manage Siswa</span>
 </a>
