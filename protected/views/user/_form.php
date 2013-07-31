@@ -18,7 +18,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->dropDownList($model,'username',$model->getGuru()); ?>
+		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
