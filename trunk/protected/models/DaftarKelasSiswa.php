@@ -89,7 +89,12 @@ class DaftarKelasSiswa extends CActiveRecord
 	}
     public function getSiswa(){
             $modelSiswa = Siswa::model()->findAll(array ('order'=>'nis'));
-            $arraySiswa = CHtml::listData($modelTahunAjaran, 'nis', 'nama_siswa');
+            $arraySiswa = CHtml::listData($modelSiswa, 'nis', 'nama_siswa');
             return $arraySiswa;
+    }
+    public function getDaftarKelas(){
+            $modelDaftarKelas = DaftarKelas::model()->findAll(array ('order'=>'id_daftar_kelas'));
+            $arrayDaftarKelas = CHtml::listData($modelDaftarKelas, 'id_daftar_kelas', 'nama_daftar_kelas');
+            return $arrayDaftarKelas;
     }
 }
