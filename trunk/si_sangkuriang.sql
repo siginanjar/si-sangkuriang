@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Inang: 127.0.0.1
--- Waktu pembuatan: 30 Jul 2013 pada 18.39
+-- Waktu pembuatan: 31 Jul 2013 pada 04.22
 -- Versi Server: 5.5.27
 -- Versi PHP: 5.4.7
 
@@ -265,7 +265,8 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
 INSERT INTO `tbl_user` (`username`, `password`, `level_user`) VALUES
 ('10110100111', '21232f297a57a5a743894a0e4a801fc3', 1),
 ('10110121312432141242', '21232f297a57a5a743894a0e4a801fc3', 1),
-('admin', '21232f297a57a5a743894a0e4a801fc3', 1);
+('admin', '21232f297a57a5a743894a0e4a801fc3', 1),
+('guru', '77e69c137812518e359196bb2f5e9bb9', 2);
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
