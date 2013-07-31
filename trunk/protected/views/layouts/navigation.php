@@ -111,7 +111,7 @@
                     ),
                     array(
                           'label'=>'Nilai',
-                          'url'=>array('/nilai/index'),
+                          'url'=>array('/nilai/admin'),
                           'visible'=>!Yii::app()->user->isGuest,
                           'itemOptions'=>array('class'=>'nav'),
                     ),
