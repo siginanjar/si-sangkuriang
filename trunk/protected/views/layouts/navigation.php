@@ -63,7 +63,7 @@
                 'htmlOptions'=>array('class'=>'nav'),
         		'items'=>array(
         			array(
-                          'label'=>'Home',
+                          'label'=>'Beranda',
                           'url'=>array('/site/index'),
                           'itemOptions'=>array('class'=>'nav'),
                     ),
