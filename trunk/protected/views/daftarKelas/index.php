@@ -14,7 +14,7 @@ $this->breadcrumbs=array(
 
 <h2>Daftar Kelas</h2>
 
-<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/index" class="btn btn-danger">
+<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/daftarKelas/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
     <span>Tambah Daftar Kelas</span>
