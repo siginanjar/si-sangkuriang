@@ -39,7 +39,7 @@ $this->breadcrumbs=array(
     'summaryText'=>'',
     'columns'=>array(
         array(
-                'name'=>'nis',
+                'name'=>'nama_siswa',
                 'type'=>'raw',
                 'value'=>'$data->nis',
         ),
