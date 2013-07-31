@@ -12,12 +12,12 @@ $this->breadcrumbs=array(
 //);
 ?>
 
+<h2>Tambah Mata Pelajaran</h2>
+
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/mataPelajaran/admin" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
     <span>Manage Mata Pelajaran</span>
 </a>
-
-<h1>Create MataPelajaran</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
