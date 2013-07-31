@@ -17,13 +17,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_daftar_kelas'); ?>
-		<?php echo $form->textField($model,'id_daftar_kelas'); ?>
+		<?php echo $form->dropDownList($model,'id_daftar_kelas',$model->getDaftarKelas(),array('empty'=>'--Pilih Kelas--')); ?>
 		<?php echo $form->error($model,'id_daftar_kelas'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'nis'); ?>
-		<?php echo $form->textField($model,'nis',array('size'=>8,'maxlength'=>8)); ?>
+		<?php echo $form->dropDownList($model,'nis',$model->getSiswa(),array('empty'=>'--Pilih siswa--')); ?>
 		<?php echo $form->error($model,'nis'); ?>
 	</div>
 
