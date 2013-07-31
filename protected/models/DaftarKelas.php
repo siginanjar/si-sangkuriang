@@ -71,7 +71,7 @@ class DaftarKelas extends CActiveRecord {
             'nama_daftar_kelas' => 'Nama Daftar Kelas',
             'id_kelas' => 'Kelas',
             'tahun_ajaran' => 'Tahun Ajaran',
-            'nip' => 'NIP',
+            'nip' => 'Wali Kelas',
             'jumlah_pertemuan' => 'Jumlah Pertemuan',
         );
     }
