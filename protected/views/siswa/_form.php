@@ -111,47 +111,9 @@
     	</tr>
     
     	<tr>
-    		<td colspan="2"><?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?></td>
+    		<td colspan="2"><?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-success')); ?></td>
     	</tr>
     </table>
-
-<<<<<<< .mine
-=======
-	<div class="row">
-		<?php echo $form->labelEx($model,'alamat'); ?>
-		<?php echo $form->textArea($model,'alamat',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'alamat'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'tahun_ajaran'); ?>
-		<?php echo $form->dropDownList($model,'tahun_ajaran',$model->getTahunAjaran(),array('empty'=>'--Pilih Tahun Masuk Ajaran--')); ?>
-		<?php echo $form->error($model,'tahun_ajaran'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'nama_wali'); ?>
-		<?php echo $form->textField($model,'nama_wali',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'nama_wali'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'no_tlpn_wali'); ?>
-		<?php echo $form->textField($model,'no_tlpn_wali',array('size'=>15,'maxlength'=>15)); ?>
-		<?php echo $form->error($model,'no_tlpn_wali'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'sekolah_asal'); ?>
-		<?php echo $form->textField($model,'sekolah_asal',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'sekolah_asal'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-success')); ?>
-	</div>
-
->>>>>>> .r44
 <?php $this->endWidget(); ?>
 
 </div><!-- form jalan -->
