@@ -87,4 +87,9 @@ class DaftarKelasSiswa extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    public function getSiswa(){
+            $modelSiswa = Siswa::model()->findAll(array ('order'=>'nis'));
+            $arraySiswa = CHtml::listData($modelTahunAjaran, 'nis', 'nama_siswa');
+            return $arraySiswa;
+    }
 }
