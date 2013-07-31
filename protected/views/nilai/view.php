@@ -105,6 +105,12 @@ $modol = "90";?>
                 ),
             ),
         ),
-)); ?>
+)); 
+
+  $this->widget('ext.pdfJs.QPdfJs',array(
+  'label'=>'report',
+  'url'=>$this->createUrl('/file/view',array('id'=>$model->id,'format'=>Files::PDF)),
+  ?>
+
 
 <?php $this->endWidget();?>

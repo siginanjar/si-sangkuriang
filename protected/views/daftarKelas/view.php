@@ -15,6 +15,15 @@ $this->breadcrumbs=array(
 //	array('label'=>'Delete DaftarKelas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_daftar_kelas),'confirm'=>'Are you sure you want to delete this item?')),
 //	array('label'=>'Manage DaftarKelas', 'url'=>array('admin')),
 //);
+
+
+$this->menu=array(
+	array('label'=>'Create DaftarKelas', 'url'=>array('create')),
+	array('label'=>'Update DaftarKelas', 'url'=>array('update', 'id'=>$model->id_daftar_kelas)),
+	array('label'=>'Delete DaftarKelas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_daftar_kelas),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage DaftarKelas', 'url'=>array('admin')),
+);
+
 ?>
 
 <h2>Lihat Daftar Kelas #<?php echo $allt->id_kelas; ?></h2>
