@@ -26,17 +26,17 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Nilais</h1>
+<h2>Kelola Nilai</h2>
 
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/create" class="btn btn-danger">
     <i class="icon-plus-sign"></i>
     &nbsp;
-    <span>Create Nilai</span>
+    <span>Tambah Nilai</span>
 </a>
 <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/nilai/index" class="btn btn-danger">
     <i class="icon-book"></i>
     &nbsp;
-    <span>List Nilai</span>
+    <span>Daftar Nilai</span>
 </a>
 
 <?php //$this->widget('zii.widgets.CDetailView', array(
@@ -50,7 +50,7 @@ $('.search-form form').submit(function(){
 //)); ?>
 
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Pencarian','#',array('class'=>'btn btn-danger search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
