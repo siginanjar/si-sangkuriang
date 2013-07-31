@@ -178,9 +178,13 @@ class NilaiController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Kelas');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
+       $model = new Nilai('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Nilai']))
+            $model->attributes = $_GET['Nilai'];
+
+        $this->render('admin', array(
+            'model' => $model,
         ));
     }
 

@@ -114,6 +114,8 @@
     		<td colspan="2"><?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-success')); ?></td>
     	</tr>
     </table>
+
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form jalan -->
