@@ -98,10 +98,10 @@ class MataPelajaran extends CActiveRecord
 		));
 	}
         
-//        public function getKelas ()
-//        {
-//            $modelKelas = Kelas::model()->findAll(array('order'=>'id_kelas'));
-//            $arrayKelas = CHtml::listData($modelKelas, 'id_kelas', 'nama_kelas');
-//            return $arrayKelas;
-//        }
+        public function getKelas ()
+        {
+            $modelKelas = Kelas::model()->findAll(array('order'=>'id_kelas'));
+            $arrayKelas = CHtml::listData($modelKelas, 'id_kelas', 'nama_kelas');
+            return $arrayKelas;
+        }
 }
