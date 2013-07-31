@@ -114,7 +114,7 @@ class Absensi extends CActiveRecord
 	
 		public function getDaftarKelas() {
         $modelDaftarKelas = DaftarKelas::model()->findAll(array('order' => 'id_daftar_kelas'));
-        $arrayDaftarKelas = CHtml::listData($modelDaftarKelas, 'id_daftar_kelas', 'nama_kelas','jumlah_pertemuan);
+        $arrayDaftarKelas = CHtml::listData($modelDaftarKelas, 'jumlah_pertemuan', 'jumlah_pertemuan');
         return $arrayDaftarKelas;
     }
 }

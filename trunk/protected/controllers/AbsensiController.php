@@ -51,28 +51,27 @@ class AbsensiController extends Controller {
         
         );
     }
-=======
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','dataabsensi'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
->>>>>>> .r52
+	
+//    public function accessRules()
+//	{
+//		return array(
+//			array('allow',  // allow all users to perform 'index' and 'view' actions
+//				'actions'=>array('index','view','create'),
+//				'users'=>array('*'),
+//			),
+//			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+//				'actions'=>array('create','update'),
+//				'users'=>array('@'),
+//			),
+//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+//				'actions'=>array('admin','delete','create','dataabsensi'),
+//				'users'=>array('admin'),
+//			),
+//			array('deny',  // deny all users
+//				'users'=>array('*'),
+//			),
+//		);
+//	}
 
     /**
      * Displays a particular model.
@@ -122,16 +121,16 @@ class AbsensiController extends Controller {
      */
 	public function actionCreate($id)
 	{
-		$model=new Dataabsensi('search');
+		$model=new Absensi('search');
 		
-		if($_POST['Dataabsensi'])
+		if($_POST['Absensi'])
 		{
 			 
 			for($i=1;$i<=$_POST['jumlahloop'];$i++){
 				//$model->attributes=$_POST['Dataabsensi'];
 				
 				//$model=Dataabsensi::model()->findByPk($_POST['idabsn'.$i]);
-				$model=new Dataabsensi;
+				$model=new Absensi();
 				$model->nis=$_POST['idp'.$i];
 				$model->id_kelas=$_POST['idkelas'];
 				$model->pertemuanke=$_POST['pke'];
@@ -151,14 +150,10 @@ class AbsensiController extends Controller {
 			}
 			
 		}
-		$criteria=new CDbCriteria(array(
-			//order by
-	  		'order'=>'id DESC',
-	  		'condition'=>'id_kelas='.$id_kelas.''		 
-		));
+
 		
 		//untuk find semua data dengan parameter $criteria	
-		$peserta = siswa::model()->findAll($criteria);
+		$daftarKelasSiswa = new DaftarKelasSiswa('search'); 
 		
 		
 		$criteriapertemuan=new CDbCriteria(array(
@@ -182,13 +177,14 @@ class AbsensiController extends Controller {
 		));
 	}
 	public function actionDataabsensi($id){
+            
 		$criteria=new CDbCriteria(array(
 			//order by
 	  		'order'=>'id DESC',
 	  		'condition'=>'kelas_id='.$id_kelas.''
 		));
 		
-		$peserta=Peserta::model()->findAll($criteria);
+		$peserta =  Peserta::model()->findAll($criteria);
 		$kelas=Kelas::model()->findByAttributes(array('id'=>$id_kelas));
 		$DaftarKelas=DaftarKelas::model()->findByAttributes(array('id'=>$id_daftar_kelas));
 		$this->render('dataabsensi',array(
