@@ -1,0 +1,1 @@
+Sistem informasi akademik SD Sangkuriang yang meliputi pengolahan data nilai dan absensi berbasis web.
